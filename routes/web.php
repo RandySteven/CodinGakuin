@@ -20,8 +20,9 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function(){
     Route::prefix('courses')->group(function(){
+        Route::get('', [CourseController::class, 'index'])->name('courses.index');
         Route::get('create', [CourseController::class, 'create'])->name('course.create');
-        Route::post('create', [CourseController::class, 'CourseController@store'])->name('course.store');
+        Route::post('create', [CourseController::class, 'store'])->name('course.store');
     });
 });
 

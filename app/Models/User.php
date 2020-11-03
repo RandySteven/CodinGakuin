@@ -26,8 +26,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function gravatar($size = 150){
+        return "https://www.gravatar.com/avatar/" . $this->email . "?d=&s=" . $size;
+    }
     public function courses()
     {
         return $this->hasMany(Course::class);
     }
+
 }

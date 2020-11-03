@@ -23,6 +23,9 @@
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
                         CodinGakuin学院
                     </a>
+                    <a href="{{ route('course.create') }}" class="font-semibold text-gray-100 mx-5 no-underline">
+                        Create
+                    </a>
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     @guest
@@ -31,11 +34,14 @@
                             <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
                         @endif
                     @else
-                        <span>{{ Auth::user()->name }}</span>
+                        <span>
+                            {{ Auth::user()->name }}
+                            <img src="{{ Auth::user()->gravatar() }}" class="rounded-full w-10" alt="...">
+                        </span>
 
                         <a href="{{ route('logout') }}"
-                           class="no-underline hover:underline text-white font-bold"
-                           onclick="event.preventDefault();
+                        class="no-underline hover:underline text-white font-bold"
+                        onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                             {{ csrf_field() }}
@@ -46,10 +52,12 @@
         </header>
 
         @yield('content')
-
         <footer>
             <div class="text-center text-blue-500 m-10 font-bold">
-                &copy;CodinGakuin学院 2020
+                &copy;CodinGakuin学院
+                <?php
+                    date("Y")==2020 ? print('2020') : echo '2020'-getdate(date("Y"));
+                ?>
             </div>
         </footer>
     </div>
