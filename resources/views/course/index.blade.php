@@ -27,7 +27,7 @@
                 </div>
             </div>
             @empty
-                No data
+                No any Course
             @endforelse
         </div>
     </main>
