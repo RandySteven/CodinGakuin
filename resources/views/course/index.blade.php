@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    <main class="sm:container sm:mx-auto sm:mt-10">
+    <main class="sm:container sm:mx-auto sm:mt-10 border-b-4">
         <h3>Courses</h3>
         <div class="grid grid-cols-3 gap-4">
             @forelse ($courses as $course)

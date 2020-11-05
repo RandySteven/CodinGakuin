@@ -6,8 +6,13 @@
         <div class="w-full">
             <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
-                <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                    {{ __('Login') }}
+                <header class="font-semibold bg-orange-500 text-gray-100 py-5 text-center px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+                    <div class="bg-red-700 font-extrabold text-gray-100 rounded rounded-full py-2 mx-48 ">
+                        学 <br>
+                        院
+                    </div>
+                    CodinGakuin学院 <br>
+                    Login
                 </header>
 
                 <form class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8" method="POST" action="{{ route('login') }}">
@@ -62,7 +67,7 @@
 
                     <div class="flex flex-wrap">
                         <button type="submit"
-                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4">
+                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-orange-500 hover:bg-blue-700 sm:py-4">
                             {{ __('Login') }}
                         </button>
 

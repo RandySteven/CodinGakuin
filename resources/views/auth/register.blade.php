@@ -2,6 +2,9 @@
 
 @section('content')
 <main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
+    <div class="place-self-center">
+        <img src="{{ asset('images/undraw_accept_tasks_po1c.svg') }}" class="w-40 h-40" alt="">
+    </div>
     <div class="flex">
         <div class="w-full">
             <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
@@ -32,6 +35,32 @@
                             {{ $message }}
                         </p>
                         @enderror
+                    </div>
+
+                    <div class="flex flex-wrap">
+                        <label for="phone" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('Phone') }}:
+                        </label>
+
+                        <input id="phone" type="text" class="form-input w-full @error('phone')  border-red-500 @enderror"
+                            name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+
+                        @error('phone')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+
+                    <div class="flex flex-wrap">
+                        <label for="gender" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('Gender') }}:
+                        </label>
+
+                        <div class="form-group w-full py-2 px-2">
+                            <input type="radio" name="gender" class="mx-4" value="male" id="male"><label for="male">Male</label>
+                            <input type="radio" name="gender" class="mx-4" value="female" id="female"><label for="female">Female</label>
+                        </div>
                     </div>
 
                     <div class="flex flex-wrap">
@@ -77,7 +106,7 @@
 
                     <div class="flex flex-wrap">
                         <button type="submit"
-                            class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4">
+                            class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-orange-500 hover:bg-blue-700 sm:py-4">
                             {{ __('Register') }}
                         </button>
 

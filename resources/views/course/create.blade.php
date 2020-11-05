@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <main class="sm:container sm:mx-auto sm:mt-10">
+    <main class="bg-gray-50 py-2 border-4 sm:container sm:mx-auto sm:mt-10">
         <div class="w-full sm:px-6">
             <div class="text-center">
-                <h4>Create Course</h4>
+                <h2 class="font-mono">Create Course</h2>
             </div>
-            <form action="{{ route('course.store') }}" method="post" class="bg-white-900 py-10 px-10" enctype="multipart/form-data">
+            <form action="{{ route('course.store') }}" method="post" class="py-10 px-10" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="thumbnail">
