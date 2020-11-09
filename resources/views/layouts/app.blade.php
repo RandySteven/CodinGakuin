@@ -29,7 +29,10 @@
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
                         CodinGakuin学院
                     </a>
-                    <a href="{{ route('course.create') }}" class="font-semibold text-gray-100 mx-5 no-underline">
+                    <a href="{{ route('courses.index') }}" class="font-semibold text-gray-100 mx-5 no-underline">
+                        Courses
+                    </a>
+                    <a href="{{ route('course.create') }}" class="font-semibold text-gray-100 no-underline">
                         Create
                     </a>
                 </div>
@@ -42,7 +45,9 @@
                     @else
                         <span class="flex">
                             <img src="{{ Auth::user()->gravatar() }}" class="rounded-full" width="20" alt="...">
-                            {{ Auth::user()->name }}
+                            <a href="{{ route('home') }}">
+                                {{ Auth::user()->name }}
+                            </a>
                         </span>
 
                         <a href="{{ route('logout') }}"

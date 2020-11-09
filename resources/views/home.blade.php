@@ -12,14 +12,19 @@
 
         <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
-            <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                Dashboard
+            <header class="font-semibold flex flex-auto text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+                <img src="{{ Auth::user()->gravatar() }}" class="rounded rounded-full" alt="">
+                <div class="font-bold ml-10 mt-10">
+                    <p class="text-3xl">
+                        {{ Auth::user()->name }}
+                    </p>
+                    <p class="text-gray-700">
+                        You are logged in!
+                    </p>
+                </div>
             </header>
 
             <div class="w-full p-6">
-                <p class="text-gray-700">
-                    You are logged in!
-                </p>
             </div>
         </section>
     </div>
